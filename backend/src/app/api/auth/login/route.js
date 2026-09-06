@@ -10,6 +10,10 @@ const adminUserMail = process.env.ADMIN_USER_MAIL
 const adminPass = process.env.ADMIN_PASS
 const DB_NAME = process.env.DB_NAME
 
+export function OPTIONS() {
+  return new NextResponse(null, { status: 204, headers: corsHeaders });
+}
+
 export async function POST(request) {
 
   const data = await request.json()
@@ -72,7 +76,7 @@ async function checkUser(email, password) {
     if (!user) return false
 
     // if user exists, check if password matches
-    const passwordMatch = bcrypt.compare(password, user.password)
+    const passwordMatch = await bcrypt.compare(password, user.password)
     if (!passwordMatch) return false
 
     // if everything matches, return the user info
@@ -80,7 +84,7 @@ async function checkUser(email, password) {
   }
 
   catch(error) {
-    console.log("exception", exception.toString())
+    console.log("exception", error.toString())
   }
 }
 

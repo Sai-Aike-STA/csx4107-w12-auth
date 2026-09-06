@@ -5,6 +5,10 @@ import corsHeaders from "@/app/lib/cors";
 import { errorResponse } from "@/app/lib/utils";
 import { NextResponse } from "next/server";
 
+export function OPTIONS() {
+  return new NextResponse(null, { status: 204, headers: corsHeaders });
+}
+
 export function GET(request) {
   const user = verifyJWT(request);
 

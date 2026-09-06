@@ -1,5 +1,5 @@
-let corsHeaders = {
-  "Access-Control_Allow-Credentials": "true",
+const corsHeaders = {
+  "Access-Control-Allow-Credentials": "true",
   "Access-Control-Allow-Origin": "http://localhost:5173",
   "Access-Control-Allow-Methods": "GET, POST, OPTIONS, DELETE",
   "Access-Control-Allow-Headers": "Content-Type, Authorization",
