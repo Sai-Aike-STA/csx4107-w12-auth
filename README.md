@@ -7,4 +7,4 @@ Local repo name: `csx4107-w12-auth`
 
 Source code repository: https://github.com/Sai-Aike-STA/csx4107-w12-auth
 
-Link to hosted site: (not required to be hosted)
+Link to hosted site: (not required to be hosted)  
